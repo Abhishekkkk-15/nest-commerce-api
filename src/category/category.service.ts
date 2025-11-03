@@ -32,7 +32,7 @@ export class CategoryService {
     return await this.categoryRepository.find();
   }
 
-  async findOne(id: number): Promise<CategoryEntity | null> {
+  async findOne(id: number): Promise<CategoryEntity> {
     const category = await this.categoryRepository.findOne({
       where: {
         id: id,

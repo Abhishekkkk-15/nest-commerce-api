@@ -5,9 +5,10 @@ import { UsersModule } from './users/users.module';
 import { MiddlewareBuilder } from '@nestjs/core';
 import { CurrentUserMiddleware } from './utilty/middlewares/current-user.middleware';
 import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(dataSourceOptions), UsersModule, CategoryModule],
+  imports: [TypeOrmModule.forRoot(dataSourceOptions), UsersModule, CategoryModule, ProductModule],
   controllers: [],
   providers: [],
 })
