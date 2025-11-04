@@ -21,7 +21,6 @@ declare global {
 export class CurrentUserMiddleware implements NestMiddleware {
   constructor(private readonly userService: UsersService) {}
   async use(req: Request, res: Response, next: NextFunction) {
-    // console.log('Req');
     try {
       const authHeaders =
         req.headers.authorization || req.headers.authorization;

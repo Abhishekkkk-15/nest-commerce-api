@@ -50,7 +50,6 @@ export class UsersService {
 
   async findOne(id: number): Promise<UserEntity | undefined> {
     const user = await this.userRepository.findOneBy({ id: id });
-    console.log('user', user);
     if (!user) return;
     return user;
   }

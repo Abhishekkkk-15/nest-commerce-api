@@ -19,7 +19,6 @@ export class CategoryService {
     createCategoryDto: CreateCategoryDto,
     currentUser: UserEntity,
   ): Promise<CategoryEntity> {
-    console.log(currentUser);
     const newCat = this.categoryRepository.create({
       ...createCategoryDto,
       addedUser: currentUser,

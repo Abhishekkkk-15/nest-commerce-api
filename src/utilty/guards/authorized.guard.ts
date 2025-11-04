@@ -14,12 +14,11 @@ export class AuthorizeGuard implements CanActivate {
       'allowedRoles',
       context.getHandler(),
     );
-    console.log('Fun', context.getHandler());
+
     const request = context.switchToHttp().getRequest();
     const result = request.currentUser?.role
       ?.map((role: string) => allowedRoles.includes(role))
       ?.find((val: boolean) => val === true);
-    console.log(request.currentUser?.role);
     if (result) return true;
     throw new UnauthorizedException('Sorry, you are not allowed.');
   }
